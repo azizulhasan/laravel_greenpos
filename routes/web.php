@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/products', 'ProductController');
+Route::post('/products/update_product', 'ProductController@update_product');
 Route::resource('/categories', 'CategoryController');
 Route::resource('/sub_categories', 'SubCategoryController');
 

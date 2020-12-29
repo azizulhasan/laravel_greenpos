@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2020 at 01:19 PM
+-- Generation Time: Dec 29, 2020 at 02:59 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.31
 
@@ -41,7 +41,7 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `category_name`, `category_slug`, `created_at`, `updated_at`) VALUES
 (34, 'Fruits', 'fruits', NULL, '2020-08-28 13:48:36'),
-(35, 'Vagitables', 'vagitables', NULL, '2020-08-28 13:48:53'),
+(35, 'Vagitables', 'vagitable', NULL, '2020-09-15 01:30:51'),
 (36, 'Computer', 'computer', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -122,12 +122,18 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_description`, `product_price`, `featured_image`, `gallery_1`, `gallery_2`, `gallery_3`, `gallery_4`, `category_id`, `sub_category_id`, `created_at`, `updated_at`) VALUES
-(1, 'adfgadf', 'asdf', 345, '1598697998_ITuo3I3sKC_avatar-1.jpg', '1598697998_jBAOUDFQ2A_avatar-1.jpg', '1598697998_TOPEiA2EiP_avatar-2.jpg', '1598697998_gOzxJWxbY1_avatar-3.jpg', '1598697998_olkPqSNM0X_avatar-4.jpg', 35, 20, NULL, NULL),
 (3, 'dgad', 'asdfa', 353, '1598698501_nJGda4eLvu_error-img.png', '1598698501_pVMSE6D0s0_product-pic.jpg', '1598698501_tTgabMaEKY_product-pic-2.jpg', '1598698501_dWLoNn1iY8_product-pic-3.jpg', '1598698501_ZJqsS71Cm4_product-pic-4.jpg', 35, 17, NULL, NULL),
 (4, 'dgad', 'asdfa', 353, '1598698533_GD4PTrOV0P_error-img.png', '1598698533_CEzlqDbmwM_product-pic.jpg', '1598698533_FqPEqylliE_product-pic-2.jpg', '1598698533_llJwwmh2SP_product-pic-3.jpg', '1598698533_hlD1KFRpFM_product-pic-4.jpg', 35, 17, NULL, NULL),
 (5, 'Banana', 'banana', 34, '1598698656_p4fSKtb5SF_avatar-1.jpg', '1598698656_ToFXL4ouys_avatar-1.jpg', '1598698656_FCB1gNiIPc_avatar-2 - Copy.jpg', '1598698656_X90Aajfqpw_avatar-2.jpg', '1598698656_fef4iNXhOw_avatar-3.jpg', 35, 17, NULL, NULL),
 (6, 'mango', 'mango', 323, '1598698744_PFleA3UeSX_avatar-2 - Copy.jpg', '1598698744_XLROgy4lnz_avatar-1.jpg', '1598698744_e4hGo0Yp6l_avatar-2 - Copy.jpg', '1598698744_bqW4nJUPtm_avatar-2.jpg', '1598698744_MhXLM4aP7j_avatar-3.jpg', 34, 17, NULL, NULL),
-(7, 'Lemon', 'lemon', 123, '1598698838_Fu4nT5ySvU_avatar-1.jpg', '1598698838_267DXF7aP1_avatar-1.jpg', '1598698838_RATBWo54T5_avatar-2 - Copy.jpg', '1598698838_Ttn1Fry8MS_avatar-2.jpg', '1598698838_msiMdoCHO2_avatar-3.jpg', 34, 17, NULL, NULL);
+(7, 'Lemon', 'lemon', 123, '1598698838_Fu4nT5ySvU_avatar-1.jpg', '1598698838_267DXF7aP1_avatar-1.jpg', '1598698838_RATBWo54T5_avatar-2 - Copy.jpg', '1598698838_Ttn1Fry8MS_avatar-2.jpg', '1598698838_msiMdoCHO2_avatar-3.jpg', 34, 17, NULL, NULL),
+(10, 'SDFAS', 'sfSA', 34, '1606663737_0je2zvSSrh_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1600368543_qiQUuYYqfj_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy.jpeg', '1600368544_cgNMCcKpXu_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn.jpeg', '1600368544_DJClPGj1Q4_doctor-character-background_1270-84 - Copy - Copy.jpg', '1600368544_r8kf8ycviG_doctor-character-background_1270-84 - Copy.jpg', 36, 20, NULL, '2020-11-29 09:28:57'),
+(11, 'Lemon', 'lemon', 123, '1600409811_0NETN44Eb5_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1600409812_5Kdhkqa5ac_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1600409812_mc1pC28gko_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy.jpeg', '1600409812_AkhrWnR6Lu_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn.jpeg', '1600409812_hjVUbwXNfG_doctor-character-background_1270-84 - Copy - Copy.jpg', 34, 17, NULL, NULL),
+(12, 'Lemon', 'lemon', 123, '1600409814_SBFL7O4uvD_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1600409814_CwjZpayKPh_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1600409814_WJ46jkKZLM_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy.jpeg', '1600409814_HRxmqAhr54_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn.jpeg', '1600409814_MbPikWJ2hQ_doctor-character-background_1270-84 - Copy - Copy.jpg', 34, 17, NULL, NULL),
+(18, 'hasan', 'hasan', 12, '1600410319_5V3q15RARt_doctor-character-background_1270-84.jpg', '1600410319_XcIdwZtKEQ_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn.jpeg', '1600410320_M22ZG2Smjz_doctor-character-background_1270-84 - Copy - Copy.jpg', '1600410320_1zko4BeExW_doctor-character-background_1270-84 - Copy.jpg', '1600410320_NQxqBnuKJX_doctor-character-background_1270-84.jpg', 36, 17, NULL, NULL),
+(19, 'SDsa', 'ASDas', 12, '1601353626_u8xbXeZsNq_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1601353626_uAWgqOYhJi_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1601353626_s8B336TW4o_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy.jpeg', '1601353626_ccPh1GpExK_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn.jpeg', '1601353626_3zVe0n4vAC_doctor-character-background_1270-84 - Copy - Copy.jpg', 35, 17, NULL, NULL),
+(20, 'This is a test product final', 'This is a test product\'s  description. final', 1000, '1606663829_drX7SH8oh4_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1606663829_6pL1knmUW3_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1606663829_QHslJa8Veg_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy.jpeg', '1606663829_6aLXhxHbbY_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn.jpeg', '1606663829_xby1VbOf3c_doctor.jpg', 35, 20, NULL, '2020-11-29 09:30:29'),
+(21, 'Product test', 'Descripttion', 12, '1609249532_xX73FL1m9K_1.jpg', '1609249532_OK3OVOQNAP_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy - Copy.jpeg', '1609249532_No7Ilozpo7_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn - Copy.jpeg', '1609249532_5KAU9Oq6qn_48-bfrybluesht02ab-being-fab-original-imaecvnxndp3zbdn.jpeg', '1609249532_AWSl9Vn6NL_doctor.jpg', 34, 18, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -151,7 +157,7 @@ CREATE TABLE `sub_categories` (
 INSERT INTO `sub_categories` (`id`, `sub_category_name`, `sub_category_slug`, `category_id`, `created_at`, `updated_at`) VALUES
 (17, 'laptop', 'Laptop', 36, NULL, '2020-08-28 13:51:11'),
 (18, 'laptop', 'Laptop', 36, NULL, '2020-08-28 13:50:51'),
-(20, 'Potato', 'potato', 35, NULL, NULL);
+(20, 'Tomato', 'tomato', 35, NULL, '2020-10-20 08:34:36');
 
 -- --------------------------------------------------------
 
@@ -175,7 +181,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'hasan', 'hasan@gmail.com', NULL, '$2y$10$.oR6ruloOrrbxyiIfymNFelI3/fFiZZyph8K0.vJDAVcjZr5D5vPG', 'BEhZzygjaSeswBw4uUhEQtY55uPD25ce9eefy7rCx1hUy5XxnyJZWP9wZlDE', '2020-08-27 06:56:56', '2020-08-27 06:56:56');
+(1, 'hasan', 'admin@gmail.com', NULL, '$2y$10$.oR6ruloOrrbxyiIfymNFelI3/fFiZZyph8K0.vJDAVcjZr5D5vPG', 'BEhZzygjaSeswBw4uUhEQtY55uPD25ce9eefy7rCx1hUy5XxnyJZWP9wZlDE', '2020-08-27 06:56:56', '2020-08-27 06:56:56');
 
 --
 -- Indexes for dumped tables
@@ -235,7 +241,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -253,7 +259,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `sub_categories`

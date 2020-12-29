@@ -56,36 +56,36 @@ class ProductController extends Controller
     {
        
        
-            $featured_image =  $request->file('featured_image')->getClientOriginalName();
-            $featured_image =  time().'_'.$this->generateRandomString(10)."_".$featured_image;
-            $request->featured_image->storeAs('products/featured_image' , $featured_image , 'public' );
-
-            
-
-            // gallery1
-            $gallery1 =  $request->gallery[0]->getClientOriginalName();
-            $gallery1=  time().'_'.$this->generateRandomString(10)."_".$gallery1;
-            $request->gallery[0]->storeAs('products/gallery' , $gallery1 , 'public' );
-            
-            // gallery2
-            $gallery2 =  $request->gallery[1]->getClientOriginalName();
-            $gallery2=  time().'_'.$this->generateRandomString(10)."_".$gallery2;
-            $request->gallery[1]->storeAs('products/gallery' , $gallery2 , 'public' );
-
-
-            // gallery3
-            $gallery3 =  $request->gallery[2]->getClientOriginalName();
-            $gallery3=  time().'_'.$this->generateRandomString(10)."_".$gallery3;
-            $request->gallery[2]->storeAs('products/gallery' , $gallery3 , 'public' );
-
-            // gallery4
-            $gallery4 =  $request->gallery[3]->getClientOriginalName();
-            $gallery4=  time().'_'.$this->generateRandomString(10)."_".$gallery4;
-            $request->gallery[3]->storeAs('products/gallery' , $gallery4 , 'public' );
-        
+        $featured_image =  $request->file('featured_image')->getClientOriginalName();
+        $featured_image =  time().'_'.$this->generateRandomString(10)."_".$featured_image;
+        $request->featured_image->storeAs('products/featured_image' , $featured_image , 'public' );
 
         
-         $data=[
+
+        // gallery1
+        $gallery1 =  $request->gallery[0]->getClientOriginalName();
+        $gallery1=  time().'_'.$this->generateRandomString(10)."_".$gallery1;
+        $request->gallery[0]->storeAs('products/gallery' , $gallery1 , 'public' );
+        
+        // gallery2
+        $gallery2 =  $request->gallery[1]->getClientOriginalName();
+        $gallery2=  time().'_'.$this->generateRandomString(10)."_".$gallery2;
+        $request->gallery[1]->storeAs('products/gallery' , $gallery2 , 'public' );
+
+
+        // gallery3
+        $gallery3 =  $request->gallery[2]->getClientOriginalName();
+        $gallery3=  time().'_'.$this->generateRandomString(10)."_".$gallery3;
+        $request->gallery[2]->storeAs('products/gallery' , $gallery3 , 'public' );
+
+        // gallery4
+        $gallery4 =  $request->gallery[3]->getClientOriginalName();
+        $gallery4=  time().'_'.$this->generateRandomString(10)."_".$gallery4;
+        $request->gallery[3]->storeAs('products/gallery' , $gallery4 , 'public' );
+    
+
+    
+        $data=[
             'product_name'       => $request->product_name,
             'product_description'=> $request->product_description,
             'product_price'      =>$request->product_price,
@@ -98,6 +98,7 @@ class ProductController extends Controller
             'gallery_4'        => $gallery4,
 
         ];
+        
         $id = Product::insertGetId($data);
         $product = Product::find($id);
         if($product !='' ){
@@ -119,7 +120,16 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $product = Product::find($product->id);
+        if($product !="" ){
+            $status = 'success';
+        }else{
+            $status = 'error';
+        }
+        return response()->json([
+            'product'  => $product,
+            'status' => $status
+        ]);
     }
 
     /**
@@ -140,9 +150,73 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update_product(Request $request)
     {
-        //
+
+        $data =[
+            'product_name'       => $request->product_name,
+            'product_description'=> $request->product_description,
+            'product_price'      =>$request->product_price,
+            'category_id'        => $request->category_id,
+            'sub_category_id'    => $request->sub_category_id,
+        ];
+
+
+        if(is_object($request->featured_image)){
+       
+            $featured_image =  $request->featured_image->getClientOriginalName();
+            $featured_image =  time().'_'.$this->generateRandomString(10)."_".$featured_image;
+            $request->featured_image->storeAs('products/featured_image' , $featured_image , 'public' );
+                $data['featured_image'] = $featured_image;
+            }else{
+                $data['featured_image'] = $request->featured_image;
+            }
+
+
+
+        // $gallery = [];
+        if(is_object($request->gallery[3])){
+        // gallery1
+        $gallery1 =  $request->gallery[0]->getClientOriginalName();
+        $gallery1=  time().'_'.$this->generateRandomString(10)."_".$gallery1;
+        $request->gallery[0]->storeAs('products/gallery' , $gallery1 , 'public' );
+        
+        // gallery2
+        $gallery2 =  $request->gallery[1]->getClientOriginalName();
+        $gallery2=  time().'_'.$this->generateRandomString(10)."_".$gallery2;
+        $request->gallery[1]->storeAs('products/gallery' , $gallery2 , 'public' );
+
+
+        // gallery3
+        $gallery3 =  $request->gallery[2]->getClientOriginalName();
+        $gallery3=  time().'_'.$this->generateRandomString(10)."_".$gallery3;
+        $request->gallery[2]->storeAs('products/gallery' , $gallery3 , 'public' );
+
+        // gallery4
+        $gallery4 =  $request->gallery[3]->getClientOriginalName();
+        $gallery4=  time().'_'.$this->generateRandomString(10)."_".$gallery4;
+        $request->gallery[3]->storeAs('products/gallery' , $gallery4 , 'public' );
+        $data['gallery_1'] = $gallery1 ;
+        $data['gallery_2'] = $gallery2 ;
+        $data['gallery_3'] = $gallery3 ;
+        $data['gallery_4'] = $gallery4 ;
+        }else{
+            $data['gallery_1'] = $request->gallery[0];
+            $data['gallery_2'] = $request->gallery[1];
+            $data['gallery_3'] = $request->gallery[2];
+            $data['gallery_4'] = $request->gallery[3];
+            
+        }
+        $result = Product::where(['id'=>$request->product_id])->update($data);
+        if($result){
+            $status = 'success';
+        }else{
+            $status = 'error';
+        }
+        return response()->json([
+            'status' => $status,
+        ]);
+        
     }
 
     /**
@@ -153,7 +227,16 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+
+        if( $product->delete() ) {
+            return response()->json([
+                'status' => 'success',
+            ]);
+        }
+        return response()->json([
+            'status' => 'error',
+        ]);
+        
     }
     protected function generateRandomString($length = 2) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

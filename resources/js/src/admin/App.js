@@ -7,12 +7,11 @@ import Header from './Header';
 import '../../../../public/assets/backend/assets/vendor/fonts/circular-std/style.css';
 import '../../../../public/assets/backend/assets/libs/css/style.css';
 import '../../../../public/assets/backend/assets/vendor/fonts/fontawesome/css/fontawesome-all.css';
-import Home from './Home';
-
+import Home from './home/Home'
 import Footer from './Footer';
 import ProductAdd from './ProductAdd'
-import Category from './Category';
 import SubCategory from './SubCategory';
+import Category from './catergory/Category';
 
 
 
@@ -91,14 +90,6 @@ class App extends Component {
         <!-- end wrapper  -->
         <!-- ============================================================== --> */}
         </Router>
-
-
-
-       
-
-
-
-
       </>
     );
   }
