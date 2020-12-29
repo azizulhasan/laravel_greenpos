@@ -19,3 +19,5 @@ Category , Sub Category and Product
 
 # Or You can run  "php artisan migrate" from project folder
 
+# Larvel command  "php artisan migrate" 
+# Node Command "npm run development" 
